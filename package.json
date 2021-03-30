@@ -1,6 +1,6 @@
 {
-  "name": "@okta/okta-signin-widget",
-  "description": "The Okta Sign-In Widget",
+  "name": "@invio/okta-signin-widget",
+  "description": "The Okta Sign-In Widget, improved by Invio.",
   "version": "5.4.4",
   "homepage": "https://github.com/okta/okta-signin-widget",
   "license": "Apache-2.0",
@@ -18,7 +18,7 @@
     "> 0.1%",
     "not ie <= 9"
   ],
-  "main": "./dist/js/okta-sign-in.entry.js",
+  "main": "./dist/js/okta-sign-in.js",
   "scripts": {
     "clean": "rimraf target && rimraf dist && rimraf build2",
     "generate-phone-codes": "node buildtools generate-phone-codes",
