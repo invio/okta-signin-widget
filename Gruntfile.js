@@ -237,7 +237,6 @@ module.exports = function (grunt) {
 
     exec: {
       'clean': 'yarn clean',
-      'retirejs': 'yarn retirejs',
       'build-dev': 'yarn build:webpack-dev' + (mockDuo ? ' --env.mockDuo' : ''),
       'build-dev-watch': 'yarn build:webpack-dev --watch --env.skipAnalyzer' + (mockDuo ? ' --env.mockDuo' : ''),
       'build-release': 'yarn build:webpack-release',
@@ -381,16 +380,15 @@ module.exports = function (grunt) {
 
     if (prodBuild) {
       buildTasks.push('exec:build-release');
-      postBuildTasks.push('copy:target-to-dist');
     } else {
       const devTask = mode === 'watch' ? 'exec:build-dev-watch' : 'exec:build-dev';
       buildTasks.push(devTask);
     }
+    postBuildTasks.push('copy:target-to-dist');
     grunt.task.run([
       'exec:clean',
       `assets:${target}`,
       ...buildTasks,
-      'exec:retirejs',
       ...postBuildTasks,
     ]);
   });
