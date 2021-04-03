@@ -1,8 +1,8 @@
 <!-- START GITHUB ONLY -->
 [<img src="https://aws1.discourse-cdn.com/standard14/uploads/oktadev/original/1X/0c6402653dfb70edc661d4976a43a46f33e5e919.png" align="right" width="256px"/>](https://devforum.okta.com/)
 [![Support](https://img.shields.io/badge/support-developer%20forum-blue.svg)](https://devforum.okta.com)
-[![Build Status](https://travis-ci.org/okta/okta-signin-widget.svg?branch=master)](https://travis-ci.org/okta/okta-signin-widget)
-[![npm version](https://img.shields.io/npm/v/@okta/okta-signin-widget.svg?style=flat-square)](https://www.npmjs.com/package/@okta/okta-signin-widget)
+[![Okta-Signin-Widget Build](https://github.com/invio/okta-signin-widget/actions/workflows/build.yml/badge.svg)](https://github.com/invio/okta-signin-widget/actions/workflows/build.yml)
+[![npm version](https://img.shields.io/npm/v/@invio/okta-signin-widget.svg?style=flat-square)](https://www.npmjs.com/package/@invio/okta-signin-widget)
 <!-- END GITHUB ONLY -->
 
 <!-- links -->
