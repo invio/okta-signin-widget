@@ -1,0 +1,52 @@
+name: 'Okta-Signin-Widget Build'
+on: push
+jobs:
+  install:
+    name: 'install deps'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies with yarn
+        run: yarn
+  test:
+    name: 'run test suites'
+    runs-on: ubuntu-latest
+    needs: install
+    strategy:
+      matrix:
+        suite: [ 'lint', 'test', 'test:testcafe-ci', 'test:jest' ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies with yarn
+        run: yarn
+
+      - name: Run test suite
+        run: yarn ${{ matrix.suite }}
