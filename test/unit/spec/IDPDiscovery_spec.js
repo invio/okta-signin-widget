@@ -288,7 +288,7 @@ const setupWithTransformUsername = _.partial(setup, { username: 'foobar', transf
 
 const setupWithTransformUsernameOnUnlock = _.partial(setup, { transformUsername: transformUsernameOnUnlock });
 
-Expect.fdescribe('IDPDiscovery', function () {
+Expect.describe('IDPDiscovery', function () {
   describe('IDPDiscoveryModel', function () {
     it('returns validation error when email is blank', function () {
       const model = new IDPDiscovery({ username: '' });
