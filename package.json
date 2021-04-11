@@ -1,7 +1,7 @@
 {
   "name": "@invio/okta-signin-widget",
   "description": "The Okta Sign-In Widget, improved by Invio.",
-  "version": "5.404.0",
+  "version": "5.404.1",
   "homepage": "https://github.com/invio/okta-signin-widget",
   "license": "Apache-2.0",
   "repository": {
