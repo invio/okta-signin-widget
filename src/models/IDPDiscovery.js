@@ -62,6 +62,8 @@ export default PrimaryAuthModel.extend({
 
             return authClient.token.getWithRedirect({
               ...this.settings.options,
+              // Unpack authParams
+              ...this.settings.options.authParams,
               loginHint: username
             });
           }
