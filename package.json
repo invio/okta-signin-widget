@@ -18,7 +18,7 @@
     "> 0.1%",
     "not ie <= 9"
   ],
-  "main": "./dist/js/okta-sign-in.js",
+  "main": "./dist/js/okta-sign-in.entry.js",
   "scripts": {
     "clean": "rimraf target && rimraf dist && rimraf build2",
     "generate-phone-codes": "node buildtools generate-phone-codes",
