@@ -1,6 +1,6 @@
 {
   "browsers": [
-    "chrome"
+    "chromium"
   ],
   "src": "test/testcafe/spec/"
 }

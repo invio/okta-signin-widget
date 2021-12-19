@@ -56,7 +56,7 @@ module.exports = (config) => {
         flags: [ '-headless' ],
       },
       ChromeHeadlessNoSandbox: {
-        base: 'ChromeHeadless',
+        base: 'ChromiumHeadless',
         flags: ['--no-sandbox']
       }
     },
