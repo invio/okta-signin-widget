@@ -3,5 +3,10 @@
     "component": "jquery",
     "version": "1.12.4",
     "justification": "This CVE (CVE-2019-11358) deals with pollution of prototype. We are mitigating this by using a patched version of jQuery (packages/@okta/courage-dist/jquery.js) The patch begins at line 213"
+  },
+  {
+    "component": "node.extend",
+    "version": "1.1.8",
+    "justification": "Low sev, no patch, 2.0 is incomaptible"
   }
 ]
