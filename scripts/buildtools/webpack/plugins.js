@@ -10,7 +10,7 @@ function webpackBundleAnalyzer(reportFilename = 'okta-sign-in.analyzer') {
   });
 }
 function emptyModule() {
-  return new IgnorePlugin(/^\.\/locale$/, /moment$/);
+  return new IgnorePlugin({ resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/ });
 }
 
 function prodMode() {
@@ -47,12 +47,12 @@ function failOnBuildFail() {
 
 function plugins(options = {}) {
   const { isProduction, skipAnalyzer } = options;
-  const list = isProduction ? 
+  const list = isProduction ?
     [
       failOnBuildFail(),
       emptyModule(),
       prodMode(),
-    ] : 
+    ] :
     // Use DEBUG/development environment w/ console warnings
     [
       failOnBuildFail(),
